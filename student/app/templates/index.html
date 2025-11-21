@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>Пол</th>
+            <th>Дата рождения</th>
+            <th>Группа</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.surname }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.midname }}</td>
+                <td>{{ student.gender }}</td>
+                <td>{{ student.bday }}</td>
+                <td>{{ student.group }}</td>
+                <td>
+                    <a href="edit/{{ student.id }}">Изменить</a> |
+                    <a href="delete/{{ student.id }}">Удалить</a>
+                </td>
+            </tr>
+
+            {% if student.exams %}
+            <tr style="font-size: 15px;">
+                <td>{{ student.exams.grade_first }}</td>
+                <td>{{ student.exams.grade_second }}</td>
+                <td>{{ student.exams.grade_third }}</td>
+                <td>{{ student.exams.grade_fourth }}</td>
+                <td>Средний балл: {{ student.exams.result }}</td>
+                <td colspan="2"></td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        <tr>
+            <td>
+                <a href="create">Добавить</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

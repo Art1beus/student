@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление студента</title>
+</head>
+<body>
+<h2>Добавление студента</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Введите фамилию</label><br>
+            <input type="text" name="surname" />
+        </p>
+        <p>
+            <label>Введите имя</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label>Введите отчество</label><br>
+            <input type="text" name="midname">
+        </p>
+        <p>
+            <label>Введите пол</label><br>
+            <input type="text" name="gender">
+        </p>
+        <p>
+            <label>Введите день рождения</label><br>
+            <input type="text" name="bday">
+        </p>
+        <p>
+            <label>Введите группу</label><br>
+            <input type="text" name="group">
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form>
+</body>
+</html>
