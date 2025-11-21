@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение оценок</title>
+</head>
+<body>
+    <h2>Изменение оценок: {{ student.surname }} {{ student.name }}</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Оценка 1</label><br>
+            <input type="number" name="grade_first" value="{{ exams.grade_first }}">
+        </p>
+        <p>
+            <label>Оценка 2</label><br>
+            <input type="number" name="grade_second" value="{{ exams.grade_second }}">
+        </p>
+        <p>
+            <label>Оценка 3</label><br>
+            <input type="number" name="grade_third" value="{{ exams.grade_third }}">
+        </p>
+        <p>
+            <label>Оценка 4</label><br>
+            <input type="number" name="grade_fourth" value="{{ exams.grade_fourth }}">
+        </p>
+
+        <input type="submit" value="Сохранить">
+    </form>
+</body>
+</html>

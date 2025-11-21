@@ -14,4 +14,3 @@ class Exams(models.Model):
     grade_second = models.IntegerField()
     grade_third = models.IntegerField()
     grade_fourth = models.IntegerField()
-    result = models.FloatField(blank=True, null=True)

@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <title>Добавление студента</title>
+    <title>Изменение студента</title>
 </head>
+
 <body>
-<h2>Добавление студента</h2>
+    <h2>Изменение студента</h2>
     <form method="POST">
         {% csrf_token %}
         <p>
             <label>Введите фамилию</label><br>
-            <input type="text" name="surname" />
+            <input type="text" name="surname" value="{{ student.surname }}" />
         </p>
         <p>
             <label>Введите имя</label><br>
-            <input type="text" name="name" />
+            <input type="text" name="name" value="{{ student.name }}" />
         </p>
         <p>
             <label>Введите отчество</label><br>
-            <input type="text" name="midname">
+            <input type="text" name="midname" value="{{ student.midname }}" />
         </p>
         <p>
             <label>Введите пол</label><br>
-            <input type="text" name="gender">
+            <input type="text" name="gender" value="{{ student.gender }}">
         </p>
         <p>
             <label>Введите день рождения</label><br>
-            <input type="text" name="bday">
+            <input type="text" name="bday" value="{{ student.bday }}">
         </p>
         <p>
             <label>Введите группу</label><br>
-            <input type="text" name="group">
+            <input type="text" name="group" value="{{ student.group }}">
         </p>
-        <input type="submit" value="Сохранить" >
+
+        <input type="submit" value="Сохранить">
     </form>
 </body>
+
 </html>
